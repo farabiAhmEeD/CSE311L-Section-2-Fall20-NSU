@@ -1,0 +1,57 @@
+1.CREATE TABLE departments (
+    Department_id int(5),
+    Department_Name varchar(30),
+    Manager_id int(6),
+    Location_id int(8),
+    PRIMARY KEY (Department_id)
+     
+    )
+INSERT INTO departments VALUES 
+(10,'Administration',200,1700),
+(20,'Marketing',201,1800),
+(50,'Shipping',124,1500),
+(60,'It',103,1400),
+(80,'Sales',149,2500),
+(90,'Executive',100,1700),
+(110,'Accounting',205,1700),
+(190,'contracting',NULL,1700);
+2.CREATE TABLE locations (
+    Location_id int(6),
+    street_address varchar(60),
+    postal_code varchar(60),
+    city varchar(50),
+    state_province varchar(50),
+    country_id varchar(10),
+    PRIMARY KEY (Location_id)
+    )
+INSERT INTO locations VALUES
+(1800,'460 bloor st. w.','ON M5S 1X8','Toronto','onterio','CA');
+(2500,'Magdalen centre The oxford sc. park','OX9 9ZB','OXFORD','OXFORD','UK');
+3.CREATE TABLE employees
+(
+    Employee_id int(6),
+    First_Name varchar(20),
+    Last_Name varchar(25),
+    Email varchar(25),
+    Phone_Number varchar(15),
+    Hire_Date date,
+    Job_id varchar(10),
+    Salary int(8),
+    commission_pct float,
+    Manager_id int(6),
+    Department_id int(4),
+    PRIMARY KEY(Employee_id))
+ INSERT INTO employees VALUES
+ ('100', 'Steven', 'King', 'SKING', '515.123.4567', '2006-06-17', 'AD_PRESS', '24000', NULL, NULL, '90');
+ ('101', 'Neena', 'Kochar', 'NKOCHAR', '515.123.4568', '2008-09-21', 'AD_VP', '17000', NULL, '100', '90');
+ ('102', 'Lex', 'De Haan', 'DEHAAN', '515.123.4569', '2009-01-13', 'AD_VP', '17000', NULL, '100', '90');
+ ('103', 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', '2008-01-03', 'IT_prog', '9000', NULL, '102', '60');
+ ('104', 'Bruce', 'Ernst', 'BERNST', '590.423.4568', '2009-05-21', 'IT_PROG', '6000', NULL, '103', '60');
+ ('107', 'Diana', 'Lorentz', 'DLORENTZ', '590.423.5567', '2008-02-07', 'IT_prog', '4200', NULL, '103', '60');
+ ('124', 'Kevin', 'Mourgos', ' KMORGOS', '650.123.5234', '2012-11-16', 'ST_MAN', '5800', NULL, '100', '50');
+ ('141', 'Treena', 'Rajs', 'RRAJS', '650.121.5234', '2004-10-17', 'ST_CLERK', '3500', NULL, '124', '50');
+ ('142', 'Curtis', 'Davies', 'CDAVIES', '121.123.5234', '2007-01-29', 'ST_CLERK', '3100', NULL, '124', '50');
+ ('143', 'Randall', 'Matos', 'RMATOS', '121.123.5234', '2008-03-15', 'ST_CLERK', '2600', NULL, '124', '50');
+ ('144', 'Peter', 'Vargas', 'PVARGAS', '121.123.5234', '2008-07-09', 'ST_CLERK', '2500', NULL, '124', '50');
+ ('149', 'Eieni', 'Zlotkey', 'EZLOTKEY', '44.1344.429018', '2014-01-29', 'SA_MAN', '10500', '0.2', '100', '80');
+
