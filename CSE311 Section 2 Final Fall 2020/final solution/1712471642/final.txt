@@ -1,0 +1,24 @@
+1.1
+ SELECT   DISTINCT S.Sname FROM 
+Student S, Class C, Enrolled E, Faculty F
+ WHERE S.snum = E.snum AND E.cname = C.name AND C.fid = F.fid AND F.fname = ‘I.Teach’ AND S.level = ‘JR’
+
+1.2
+ SELECT DISTINCT S.sname 
+ FROM Student S 
+ WHERE S.snum IN (SELECT E1.snum
+          FROM Enrolled E1, Enrolled E2, Class C1, Class C2
+          WHERE E1.snum = E2.snum AND E1.cname<>E2.cname AND E1.cname = C1.name AND E2.cname = C2.name AND C1.meetsat = C2.meetsat)
+
+1.3
+ SELECT   DISTINCTS.sname
+ FROM Student S
+ WHERE S.snumIN(SELECT E.snum FROMEnrolled E 
+                GROUP BYE.snum
+                HAVING   COUNT(*)>=ALL(SELECT   COUNT(*)FROMEnrolled E2GROUP BYE2.snum ))
+1.4
+  SELECT DISTINCT S.sname
+ FROM Student S
+ WHERE S.snum NOT IN(SELECT E.snum FROM Enrolled E )
+
+2.1
